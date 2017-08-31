@@ -6,10 +6,24 @@
 
 ### Schemas
 
-The [JSON schemas](http://json-schema.org/) for the API payloads and responses can be found in [0x-json-schema](https://github.com/0xProject/json-schemas). Examples of each payload and response can be found in the library's [test suite](https://github.com/0xProject/json-schemas/blob/master/test/schema_test.ts).
+The [JSON schemas](http://json-schema.org/) for the API payloads and responses can be found in [0x-json-schema](https://github.com/0xProject/json-schemas). Examples of each payload and response can be found in the library's [test suite](https://github.com/0xProject/json-schemas/blob/master/test/schema_test.ts#L379).
 
 ```
 npm install 0x-json-schema
+```
+
+You can easily validate your API's payloads and responses using [0x-json-schema](https://github.com/0xProject/json-schemas):
+
+```
+import {SchemaValidator, ValidatorResult, schemas} from '0x-json-schemas';
+
+const {relayerApiTokenPairsResponseSchema} = schemas;
+const validator = new SchemaValidator();
+
+const tokenPairsResponse = {
+    ...
+};
+const validatorResult: ValidatorResult = validator.validate(tokenPairsResponse, relayerApiTokenPairsResponseSchema);
 ```
 
 ### Misc.
@@ -26,7 +40,7 @@ Retrieves a list of available token pairs and the information required to trade 
 
 #### Response
 
-[See response schema](https://github.com/0xProject/json-schemas/blob/master/schemas/relayer_api_token_pairs_response_schema.ts)
+[See response schema](https://github.com/0xProject/json-schemas/blob/master/schemas/relayer_api_token_pairs_response_schema.ts#L1)
 
 ```
 [
@@ -72,7 +86,7 @@ Retrieves a list of orders given query parameters. Default is all open orders.
 
 #### Response
 
-[See response schema](https://github.com/0xProject/json-schemas/blob/master/schemas/relayer_api_order_response_schema.ts)
+[See response schema](https://github.com/0xProject/json-schemas/blob/master/schemas/relayer_api_order_response_schema.ts#L1)
 
 ```
 [
@@ -109,7 +123,7 @@ Retrieves a specific order by orderHash.
 
 #### Response
 
-[See response schema](https://github.com/0xProject/json-schemas/blob/master/schemas/relayer_api_order_response_schema.ts)
+[See response schema](https://github.com/0xProject/json-schemas/blob/master/schemas/relayer_api_order_response_schema.ts#L7)
 
 
 ```
@@ -213,7 +227,7 @@ Returns HTTP 201 upon success.
 
 Error response will be sent with a non-2xx HTTP status code
 
-[See error response schema](https://github.com/0xProject/json-schemas/blob/master/schemas/order_schemas.ts#L28)
+[See error response schema](https://github.com/0xProject/json-schemas/blob/master/schemas/relayer_api_error_response_schema.ts)
 
 ```
 {
