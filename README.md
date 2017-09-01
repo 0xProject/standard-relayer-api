@@ -147,7 +147,7 @@ Retrieves a specific order by orderHash.
             "s": "0x40349190569279751135161d22529dc25add4f6069af05be04cacbda2ace2254"
         }
     },
-    "state": "PENDING",
+    "state": "OPEN",
     "pending": {
         "fillAmount": "50000000000000000",
         "cancelAmount": "50000000000000000"
