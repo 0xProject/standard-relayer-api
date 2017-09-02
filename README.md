@@ -117,7 +117,7 @@ Retrieves a list of orders given query parameters. Default is all open orders.
 ]
 ```
 
-### GET /v0/order/<orderHash>
+### GET /v0/order/[orderHash]
 
 Retrieves a specific order by orderHash.
 
