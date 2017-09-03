@@ -70,6 +70,7 @@ Retrieves a list of orders given query parameters. Default is all open orders.
 
 #### Parameters
 
+* tokenAscByPrice [string]: token by which to sort the orders in ascending order of the price of that token. By default the response returned by this endpoint is unsorted.
 * exchangeContractAddress [string]: returns orders created for this exchange address
 * isExpired [boolean]: returns expired orders (defaults to false)
 * isOpen [boolean]: returns open orders (defaults to true)
@@ -83,6 +84,8 @@ Retrieves a list of orders given query parameters. Default is all open orders.
 * trader [string]: returns orders where maker or taker is trader address
 * feeRecipient [string]: returns orders where feeRecipient is feeRecipient address
 * limit [number]: number of orders to return
+
+**Note:** The price of tokenA is the amount of tokenB required to purchase 1 tokenA.
 
 #### Response
 
