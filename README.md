@@ -48,14 +48,14 @@ Retrieves a list of available token pairs and the information required to trade 
         "tokenA": {
             "address": "0x323b5d4c32345ced77393b3530b1eed0f346429d",
             "symbol": "MKR",
-            "precision": 18,
+            "decimals": 18,
             "minAmount": "0",
             "maxAmount": "10000000000000000000"
         },
         "tokenB": {
             "address": "0xef7fff64389b814a946f3e92105513705ca6b990",
             "symbol": "GLM",
-            "precision": 18,
+            "decimals": 18,
             "minAmount": "0",
             "maxAmount": "50000000000000000000"
         }
@@ -74,10 +74,10 @@ Retrieves a list of orders given query parameters. Default is all open orders.
 * isExpired [boolean]: returns expired orders (defaults to false)
 * isOpen [boolean]: returns open orders (defaults to true)
 * isClosed [boolean]: returns closed orders (defaults to false)
-* token [string]: returns orders where makerToken or takerToken is token address
-* makerToken [string]: returns orders where makerToken is makerToken address
-* takerToken [string]: returns orders where takerToken is takerToken address
-* tokenA=&tokenB [string]: returns orders where makerToken and takerToken are tokenA or tokenB
+* token [string]: returns orders where makerTokenAddress or takerTokenAddress is token address
+* makerTokenAddress [string]: returns orders with specified makerTokenAddress
+* takerTokenAddress [string]: returns orders with specified makerTokenAddress
+* tokenA=&tokenB [string]: returns orders where makerTokenAddress and takerTokenAddress are tokenA or tokenB
 * maker [string]: returns orders where maker is maker address
 * taker [string]: returns orders where taker is taker address
 * trader [string]: returns orders where maker or taker is trader address
@@ -117,7 +117,7 @@ Retrieves a list of orders given query parameters. Default is all open orders.
 ]
 ```
 
-### GET /v0/order/<orderHash>
+### GET /v0/order/[orderHash]
 
 Retrieves a specific order by orderHash.
 
@@ -147,7 +147,7 @@ Retrieves a specific order by orderHash.
             "s": "0x40349190569279751135161d22529dc25add4f6069af05be04cacbda2ace2254"
         }
     },
-    "state": "PENDING",
+    "state": "OPEN",
     "pending": {
         "fillAmount": "50000000000000000",
         "cancelAmount": "50000000000000000"
@@ -171,8 +171,8 @@ Returns the only acceptable fees (in ZRX) for the specified order parameters
 {
     "maker": "0x9e56625509c2f60af937f23b7b532600390e8c8b",
     "taker": "0xa2b31dacf30a9c50ca473337c01d8a201ae33e32",
-    "makerToken": "0x323b5d4c32345ced77393b3530b1eed0f346429d",
-    "takerToken": "0xef7fff64389b814a946f3e92105513705ca6b990",
+    "makerTokenAddress": "0x323b5d4c32345ced77393b3530b1eed0f346429d",
+    "takerTokenAddress": "0xef7fff64389b814a946f3e92105513705ca6b990",
     "makerTokenAmount": "10000000000000000000",
     "takerTokenAmount": "30000000000000000000"
 }
