@@ -50,19 +50,25 @@ Retrieves a list of available token pairs and the information required to trade 
             "symbol": "MKR",
             "decimals": 18,
             "minAmount": "0",
-            "maxAmount": "10000000000000000000"
+            "maxAmount": "10000000000000000000",
+            "precision": 5
         },
         "tokenB": {
             "address": "0xef7fff64389b814a946f3e92105513705ca6b990",
             "symbol": "GLM",
             "decimals": 18,
             "minAmount": "0",
-            "maxAmount": "50000000000000000000"
+            "maxAmount": "50000000000000000000",
+            "precision": 5
         }
-    },
+    }
     ...
 ]
 ```
+
+- `precision` - the desired price precision a Relayer would like to support within their orderbook
+- `minAmount` - the minimum trade amount the Relayer will accept
+- `maxAmount` - the maximum trade amount the Relayer will accept
 
 ### GET /v0/orders
 
@@ -116,6 +122,8 @@ Retrieves a list of orders given query parameters. Default is all open orders.
     ...
 ]
 ```
+
+- `state` - the state of the order. The order is `OPEN` until completely filled/canceled.
 
 ### GET /v0/order/[orderHash]
 
