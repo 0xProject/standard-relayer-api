@@ -76,6 +76,7 @@ Retrieves a list of orders given query parameters. Default is all open orders.
 
 #### Parameters
 
+* ascByBaseToken [string]: token designated as the baseToken in the [currency pair calculation](https://en.wikipedia.org/wiki/Currency_pair) of price by which the orders will be sorted in ascending order. Within the price sorted orders, the orders are further sorted first by fees, then by expiration in ascending order. By default the response returned by this endpoint is unsorted. Further explanation available [here](https://github.com/0xProject/standard-relayer-api/pull/3#issuecomment-327383439).
 * exchangeContractAddress [string]: returns orders created for this exchange address
 * isExpired [boolean]: returns expired orders (defaults to false)
 * isOpen [boolean]: returns open orders (defaults to true)
