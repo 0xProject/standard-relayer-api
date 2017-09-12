@@ -118,6 +118,10 @@ Retrieves a list of orders given query parameters. Default is all open orders.
             }
         },
         "state": "OPEN",
+        "pending": {
+            "fillAmount": "50000000000000000",
+            "cancelAmount": "50000000000000000"
+        },
         "remainingTakerTokenAmount": "1000000000000000000"
     }
     ...
