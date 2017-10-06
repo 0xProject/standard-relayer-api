@@ -34,9 +34,48 @@ const validatorResult: ValidatorResult = validator.validate(tokenPairsResponse, 
 
 ## Endpoints
 
+### GET /v0/tokens
+
+Retrieves available tokens and the information required to trade them.
+
+#### Response
+
+[See response schema](https://github.com/0xProject/json-schemas/blob/master/schemas/relayer_api_tokens_response_schema.ts#L1)
+
+```
+{
+    "0x323b5d4c32345ced77393b3530b1eed0f346429d": {
+        "symbol": "MKR",
+        "decimals": 18,
+        "minAmount": "0",
+        "maxAmount": "10000000000000000000",
+        "precision": 5
+    },
+    "0xef7fff64389b814a946f3e92105513705ca6b990": {
+        "symbol": "GLM",
+        "decimals": 18,
+        "minAmount": "0",
+        "maxAmount": "50000000000000000000",
+        "precision": 5
+    },
+    "0xb18845c260f680d5b9d84649638813e342e4f8c9": {
+        "symbol": "REP",
+        "decimals": 18,
+        "minAmount": "0",
+        "maxAmount": "50000000000000000000",
+        "precision": 5
+    }
+    ...
+}
+```
+
+- `precision` - the desired price precision a relayer would like to support within their orderbook
+- `minAmount` - the minimum trade amount the relayer will accept
+- `maxAmount` - the maximum trade amount the relayer will accept
+
 ### GET /v0/token_pairs
 
-Retrieves a list of available token pairs and the information required to trade them.
+Retrieves a list of available token pairs.
 
 #### Response
 
@@ -44,31 +83,18 @@ Retrieves a list of available token pairs and the information required to trade 
 
 ```
 [
-    {
-        "tokenA": {
-            "address": "0x323b5d4c32345ced77393b3530b1eed0f346429d",
-            "symbol": "MKR",
-            "decimals": 18,
-            "minAmount": "0",
-            "maxAmount": "10000000000000000000",
-            "precision": 5
-        },
-        "tokenB": {
-            "address": "0xef7fff64389b814a946f3e92105513705ca6b990",
-            "symbol": "GLM",
-            "decimals": 18,
-            "minAmount": "0",
-            "maxAmount": "50000000000000000000",
-            "precision": 5
-        }
-    }
+    [
+        "0x323b5d4c32345ced77393b3530b1eed0f346429d",
+        "0xef7fff64389b814a946f3e92105513705ca6b990"
+    ],
+    [
+        "0xb18845c260f680d5b9d84649638813e342e4f8c9", 
+        "0xef7fff64389b814a946f3e92105513705ca6b990"
+    ],
     ...
 ]
 ```
 
-- `precision` - the desired price precision a Relayer would like to support within their orderbook
-- `minAmount` - the minimum trade amount the Relayer will accept
-- `maxAmount` - the maximum trade amount the Relayer will accept
 
 ### GET /v0/orders
 
