@@ -128,7 +128,7 @@ Retrieves a list of orders given query parameters. Default is all open orders. T
 #### Parameters
 
 * exchangeContractAddress [string]: returns orders created for this exchange address
-* token [string]: returns orders where makerTokenAddress or takerTokenAddress is token address
+* tokenAddress [string]: returns orders where makerTokenAddress or takerTokenAddress is token address
 * makerTokenAddress [string]: returns orders with specified makerTokenAddress
 * takerTokenAddress [string]: returns orders with specified makerTokenAddress
 * tokenA=&tokenB [string]: returns orders where makerTokenAddress and takerTokenAddress are tokenA or tokenB
