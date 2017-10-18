@@ -2,7 +2,7 @@
 
 0x Protocol is an open standard. Because of this, we expect many independent applications to be built that will want to use the protocol. In order to make it easier for anyone to source liquidity that conforms to the 0x order format, relayers can opt-in to implementing a set of standard relayer API endpoints. In doing so, they allow clients of the standard relayer API to access the orders on their orderbook.
 
-## General
+## General Guidance
 
 ### Schemas
 
@@ -25,9 +25,57 @@ const tokenPairsResponse = {
 };
 const validatorResult: ValidatorResult = validator.validate(tokenPairsResponse, relayerApiTokenPairsResponseSchema);
 ```
+### Pagination
+
+Requests that return multiple items should respond to the **?page** and **?per_page** parameters. For example:
+
+```
+curl https://api.example-relayer.com/v0/token_pairs?page=3?per_page=20
+```
+Page numbering should be 1-indexed, not 0-indexed.
+
+### Rate Limits
+
+Rate limit guidance for clients can be optionally returned in the response headers:
+
+| Header Name           | Description
+| --------------------- | ---------------------------------------------------------------------------- |
+| X-RateLimit-Limit     | The maximum number of requests you're permitted to make per hour.            |
+| X-RateLimit-Remaining | The number of requests remaining in the current rate limit window.           |
+| X-RateLimit-Reset     | The time at which the current rate limit window resets in UTC epoch seconds. |
+
+For example:
+
+```
+curl -i https://api.example-relayer.com/v0/token_pairs
+HTTP/1.1 200 OK
+Date: Mon, 20 Oct 2017 12:30:06 GMT
+Status: 200 OK
+X-RateLimit-Limit: 60
+X-RateLimit-Remaining: 56
+X-RateLimit-Reset: 1372700873
+```
+
+When a rate limit is exceeded, a status of **429 Too Many Requests** should be returned.
+
+### Errors
+
+Unless the spec defines otherwise, errors to bad requests should respond with HTTP 4xx or status codes.
+
+#### Common error codes
+
+| Code | Reason
+| ---- | --------------------------------------- |
+| 400  | Bad Request – Invalid request format    |
+| 404  | Not found                               |
+| 429  | Too many requests - Rate limit exceeded |
+| 500  | Internal Server Error                   |
+| 501  | Not Implemented                         |
+
 
 ### Misc.
 
+- All requests and responses should be of **application/json** content type
 - All token amounts are sent in amounts of the smallest level of precision (base units). (e.g if a token has 18 decimal places, selling 1 token would show up as selling `'1000000000000000000'` units by this API).
 - All addresses are sent as lower-case (non-checksummed) Ethereum addresses with the `0x` prefix.
 
@@ -35,7 +83,7 @@ const validatorResult: ValidatorResult = validator.validate(tokenPairsResponse, 
 
 ### GET /v0/token_pairs
 
-Retrieves a list of available token pairs and the information required to trade them.
+Retrieves a list of available token pairs and the information required to trade them. This endpoint should be paginated.
 
 #### Parameters
 
@@ -72,7 +120,7 @@ Retrieves a list of available token pairs and the information required to trade 
 
 ### GET /v0/orders
 
-Retrieves a list of orders given query parameters. Default is all open orders.
+Retrieves a list of orders given query parameters. Default is all open orders. This endpoint should be paginated
 
 #### Parameters
 
@@ -89,7 +137,6 @@ Retrieves a list of orders given query parameters. Default is all open orders.
 * taker [string]: returns orders where taker is taker address
 * trader [string]: returns orders where maker or taker is trader address
 * feeRecipient [string]: returns orders where feeRecipient is feeRecipient address
-* limit [number]: number of orders to return
 
 #### Response
 
