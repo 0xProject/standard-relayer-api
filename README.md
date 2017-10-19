@@ -9,7 +9,7 @@
 The [JSON schemas](http://json-schema.org/) for the API payloads and responses can be found in [0x-json-schema](https://github.com/0xProject/json-schemas). Examples of each payload and response can be found in the library's [test suite](https://github.com/0xProject/json-schemas/blob/master/test/schema_test.ts#L379).
 
 ```
-npm install 0x-json-schema
+npm install 0x-json-schema --save
 ```
 
 You can easily validate your API's payloads and responses using [0x-json-schema](https://github.com/0xProject/json-schemas):
@@ -31,7 +31,7 @@ const validatorResult: ValidatorResult = validator.validate(tokenPairsResponse, 
 Requests that return multiple items should respond to the **?page** and **?per_page** parameters. For example:
 
 ```
-curl https://api.example-relayer.com/v0/token_pairs?page=3?per_page=20
+curl https://api.example-relayer.com/v0/token_pairs?page=3&per_page=20
 ```
 Page numbering should be 1-indexed, not 0-indexed.
 
@@ -137,7 +137,7 @@ Retrieves a list of orders given query parameters. Default is all open orders. T
 * trader [string]: returns orders where maker or taker is trader address
 * feeRecipient [string]: returns orders where feeRecipient is feeRecipient address
 
-If both makerTokenAddress and takerTokenAddress are specified, returned orders will be sorted by price determined by (takerTokenAmount/makerTokenAmount) in ascending order. By default, orders returned by this endpoint are unsorted. 
+If both makerTokenAddress and takerTokenAddress are specified, returned orders will be sorted by price determined by (takerTokenAmount/makerTokenAmount) in ascending order. By default, orders returned by this endpoint are unsorted.
 
 #### Response
 
