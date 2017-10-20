@@ -2,6 +2,26 @@
 
 0x Protocol is an open standard. Because of this, we expect many independent applications to be built that will want to use the protocol. In order to make it easier for anyone to source liquidity that conforms to the 0x order format, relayers can opt-in to implementing a set of standard relayer API endpoints. In doing so, they allow clients of the standard relayer API to access the orders on their orderbook.
 
+## Table of Contents
+
+* [General Guidance](#general-guidance)
+    * [Schemas](#schemas)
+    * [Pagination](#pagination)
+    * [Rate Limits](#rate-limits)
+    * [Errors](#errors)
+    * [Misc](#misc)
+* [REST API](#rest-api)
+    * [GET token_pairs](#get-v0token_pairs)
+    * [GET orders](#get-v0orders)
+    * [GET order](#get-v0orderorderhash)
+    * [GET orderbook](#get-v0orderbook)
+    * [POST fees](#post-v0fees)
+    * [POST order](#post-v0order)
+* [Websocket API](#websocket-api)
+    * [Orderbook channel](#orderbook-channel)
+        * [Request](#request)
+        * [Response](#response-6)
+
 ## General Guidance
 
 ### Schemas
