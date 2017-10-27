@@ -1,4 +1,4 @@
-# Standard Relayer API V0 Draft
+# Standard Relayer API V0
 
 0x Protocol is an open standard. Because of this, we expect many independent applications to be built that will want to use the protocol. In order to make it easier for anyone to source liquidity that conforms to the 0x order format, relayers can opt-in to implementing a set of standard relayer API endpoints. In doing so, they allow clients of the standard relayer API to access the orders on their orderbook.
 
