@@ -110,7 +110,7 @@ Retrieves a list of available token pairs and the information required to trade 
 
 #### Parameters
 
-* tokenA=&tokenB [string]: returns token pairs that contain tokenA and tokenB (in any order). Setting only tokenA or tokenB returns pairs filtered by that token only
+* tokenA=&tokenB [string]: returns token pairs that contain tokenA and tokenB (in any order). Setting only tokenA or tokenB returns pairs filtered by that token only (optional)
 
 #### Response
 
@@ -156,6 +156,8 @@ Retrieves a list of orders given query parameters. This endpoint should be pagin
 * taker [string]: returns orders where taker is taker address
 * trader [string]: returns orders where maker or taker is trader address
 * feeRecipient [string]: returns orders where feeRecipient is feeRecipient address
+
+All parameters are optional.
 
 If both makerTokenAddress and takerTokenAddress are specified, returned orders will be sorted by price determined by (takerTokenAmount/makerTokenAmount) in ascending order. By default, orders returned by this endpoint are unsorted.
 
@@ -429,7 +431,7 @@ Validation error codes:
 
 ##### Orderbook Snapshot
 
-[See payload schema](https://github.com/0xProject/json-schemas/blob/master/schemas/relayer_api_orberbook_channel_snapshot_schema.ts#1)
+[See payload schema](https://github.com/0xProject/json-schemas/blob/master/schemas/relayer_api_orderbook_channel_snapshot_schema.ts)
 
 ```
 {
@@ -493,7 +495,7 @@ Bids will be sorted in descending order by price, and asks will be sorted in asc
 
 ##### Orderbook Update
 
-[See payload schema](https://github.com/0xProject/json-schemas/blob/master/schemas/relayer_api_orberbook_channel_update_schema.ts#1)
+[See payload schema](https://github.com/0xProject/json-schemas/blob/master/schemas/relayer_api_orderbook_channel_update_response_schema.ts)
 
 ```
 {
