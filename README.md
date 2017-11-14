@@ -26,13 +26,13 @@
 
 ### Schemas
 
-The [JSON schemas](http://json-schema.org/) for the API payloads and responses can be found in [0x-json-schema](https://github.com/0xProject/json-schemas). Examples of each payload and response can be found in the library's [test suite](https://github.com/0xProject/json-schemas/blob/master/test/schema_test.ts#L379).
+The [JSON schemas](http://json-schema.org/) for the API payloads and responses can be found in [0x-json-schema](https://github.com/0xProject/0x.js/tree/development/packages/json-schemas). Examples of each payload and response can be found in the library's [test suite](https://github.com/0xProject/0x.js/blob/development/packages/json-schemas/test/schema_test.ts#L1).
 
 ```
 npm install 0x-json-schema --save
 ```
 
-You can easily validate your API's payloads and responses using [0x-json-schema](https://github.com/0xProject/json-schemas):
+You can easily validate your API's payloads and responses using [0x-json-schema](https://github.com/0xProject/0x.js/tree/development/packages/json-schemas):
 
 ```
 import {SchemaValidator, ValidatorResult, schemas} from '0x-json-schemas';
@@ -114,7 +114,7 @@ Retrieves a list of available token pairs and the information required to trade 
 
 #### Response
 
-[See response schema](https://github.com/0xProject/json-schemas/blob/master/schemas/relayer_api_token_pairs_response_schema.ts#L1)
+[See response schema](https://github.com/0xProject/0x.js/blob/development/packages/json-schemas/schemas/relayer_api_token_pairs_response_schema.ts#L1)
 
 ```
 [
@@ -163,7 +163,7 @@ If both makerTokenAddress and takerTokenAddress are specified, returned orders w
 
 #### Response
 
-[See response schema](https://github.com/0xProject/json-schemas/blob/master/schemas/signed_orders_schema.ts#L1)
+[See response schema](https://github.com/0xProject/0x.js/blob/development/packages/json-schemas/schemas/signed_orders_schema.ts#L1)
 
 ```
 [
@@ -196,7 +196,7 @@ Retrieves a specific order by orderHash.
 
 #### Response
 
-[See response schema](https://github.com/0xProject/json-schemas/blob/master/schemas/order_schemas.ts#L24)
+[See response schema](https://github.com/0xProject/0x.js/blob/development/packages/json-schemas/schemas/order_schemas.ts#L24)
 
 
 ```
@@ -234,7 +234,7 @@ Retrieves the orderbook for a given token pair.
 
 #### Response
 
-[See response schema](https://github.com/0xProject/json-schemas/blob/master/schemas/relayer_api_orderbook_response_schema.ts#L1)
+[See response schema](https://github.com/0xProject/0x.js/blob/development/packages/json-schemas/schemas/relayer_api_orderbook_response_schema.ts#L1)
 
 ```
 {
@@ -296,7 +296,7 @@ Given an unsigned order without the fee-related properties, returns the required
 
 #### Payload
 
-[See payload schema](https://github.com/0xProject/json-schemas/blob/master/schemas/relayer_api_fees_payload_schema.ts#1)
+[See payload schema](https://github.com/0xProject/0x.js/blob/development/packages/json-schemas/schemas/relayer_api_fees_payload_schema.ts#L1)
 
 ```
 {
@@ -314,7 +314,7 @@ Given an unsigned order without the fee-related properties, returns the required
 
 #### Response
 
-[See response schema](https://github.com/0xProject/json-schemas/blob/master/schemas/relayer_api_fees_response_schema.ts#1)
+[See response schema](https://github.com/0xProject/0x.js/blob/development/packages/json-schemas/schemas/relayer_api_fees_response_schema.ts#L1)
 
 ```
 {
@@ -330,7 +330,7 @@ Submit a signed order to the relayer.
 
 #### Payload
 
-[See payload schema](https://github.com/0xProject/json-schemas/blob/master/schemas/order_schemas.ts#L24)
+[See payload schema](https://github.com/0xProject/0x.js/blob/development/packages/json-schemas/schemas/order_schemas.ts#L24)
 
 ```
 {
@@ -364,7 +364,7 @@ Returns HTTP 201 upon success.
 
 Error response will be sent with a non-2xx HTTP status code
 
-[See error response schema](https://github.com/0xProject/json-schemas/blob/master/schemas/relayer_api_error_response_schema.ts#1)
+[See error response schema](https://github.com/0xProject/0x.js/blob/development/packages/json-schemas/schemas/relayer_api_error_response_schema.ts#L1)
 
 ```
 {
@@ -407,7 +407,7 @@ Validation error codes:
 
 #### Request
 
-[See payload schema](https://github.com/0xProject/json-schemas/blob/master/schemas/relayer_api_orberbook_channel_subscribe_schema.ts#1)
+[See payload schema](https://github.com/0xProject/0x.js/blob/development/packages/json-schemas/schemas/relayer_api_orberbook_channel_subscribe_schema.ts#L1)
 
 ```
 {
@@ -431,7 +431,7 @@ Validation error codes:
 
 ##### Orderbook Snapshot
 
-[See payload schema](https://github.com/0xProject/json-schemas/blob/master/schemas/relayer_api_orderbook_channel_snapshot_schema.ts)
+[See payload schema](https://github.com/0xProject/0x.js/blob/development/packages/json-schemas/schemas/relayer_api_orderbook_channel_snapshot_schema.ts#L1)
 
 ```
 {
@@ -495,7 +495,7 @@ Bids will be sorted in descending order by price, and asks will be sorted in asc
 
 ##### Orderbook Update
 
-[See payload schema](https://github.com/0xProject/json-schemas/blob/master/schemas/relayer_api_orderbook_channel_update_response_schema.ts)
+[See payload schema](https://github.com/0xProject/0x.js/blob/development/packages/json-schemas/schemas/relayer_api_orderbook_channel_update_response_schema.ts#L1)
 
 ```
 {
