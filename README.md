@@ -2,16 +2,27 @@
 
 0x Protocol is an open standard. Because of this, we expect many independent applications to be built that will want to use the protocol. In order to make it easier for anyone to source liquidity that conforms to the 0x order format, relayers can opt-in to implementing a set of standard relayer API endpoints. In doing so, they allow clients of the standard relayer API to access the orders on their orderbook.
 
-## Current Specifications
+## Specification Versions
 
+### SRA v0 
+Made to match [0x Protocol v1](https://github.com/0xProject/0x-protocol-specification/blob/master/v1/v1-whitepaper.pdf)
 * [HTTP](https://github.com/0xProject/standard-relayer-api/blob/master/http/v0.md)
 * [WebSocket](https://github.com/0xProject/standard-relayer-api/blob/master/ws/v0.md)
+
+### SRA v1
+Made to match [0x Protocol v2](https://github.com/0xProject/0x-protocol-specification/blob/master/v2/v2-specification.md)
+* [HTTP](https://github.com/0xProject/standard-relayer-api/blob/master/http/v1.md)
+* [WebSocket](https://github.com/0xProject/standard-relayer-api/blob/master/ws/v1.md)
 
 ## General Info
 
 ### Versioning
 
-TBD
+The URL that specifies the SRA API endpoint should end in the version. Here are some examples:
+
+**HTTP**: `https://api.relayer.com/sra/v0/`, `https://api.relayer.com/sra/v1/`
+
+**Websocket**: `wss://api.relayer.com/sra/v0/`, `wss://api.relayer.com/sra/v1/`
 
 ### Testing
 
