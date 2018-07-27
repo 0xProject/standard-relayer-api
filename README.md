@@ -74,3 +74,7 @@ Encoding the ERC721 token contract (address: `0x371b13d97f4bf77d724e78c16b7dc740
 ```
 
 For more information see [the Asset Proxy](https://github.com/0xProject/0x-protocol-specification/blob/master/v2/v2-specification.md#erc20proxy) section of the v2 spec and the [Ethereum ABI Spec](https://solidity.readthedocs.io/en/develop/abi-spec.html).
+
+### The `remainingFillableAmount` Field
+
+In v1 of the standard relayer API we added the `remainingFillableAmount` field. It is a convenience field that communicates how much of a 0x order is potentially left to be filled, and is present whenever a 0x order is returned by the API. Unlike the other fields in a 0x order, it is not guaranteed to be correct as it is derived from whatever mechanism the implementer (ie. the relayer) is using. While convenient for prototyping and low stakes situations, we recommend validating the value of the field by checking the state of the blockchain yourself, such as by using [Order Watcher](https://0xproject.com/wiki#0x-OrderWatcher).
