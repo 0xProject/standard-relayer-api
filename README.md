@@ -10,9 +10,12 @@ Made to match [0x Protocol v1](https://github.com/0xProject/0x-protocol-specific
 * [WebSocket](https://github.com/0xProject/standard-relayer-api/blob/master/ws/v0.md)
 
 ### SRA v1
+Skipped for naming convention and convenience reasons.
+
+### SRA v2
 Made to match [0x Protocol v2](https://github.com/0xProject/0x-protocol-specification/blob/master/v2/v2-specification.md)
-* [HTTP](https://github.com/0xProject/standard-relayer-api/blob/master/http/v1.md)
-* [WebSocket](https://github.com/0xProject/standard-relayer-api/blob/master/ws/v1.md)
+* [HTTP](https://github.com/0xProject/standard-relayer-api/blob/master/http/v2.md)
+* [WebSocket](https://github.com/0xProject/standard-relayer-api/blob/master/ws/v2.md)
 
 ## General Info
 
@@ -20,9 +23,9 @@ Made to match [0x Protocol v2](https://github.com/0xProject/0x-protocol-specific
 
 The URL that specifies the SRA API endpoint should end in the version. Here are some examples:
 
-**HTTP**: `https://api.relayer.com/sra/v0/`, `https://api.relayer.com/sra/v1/`
+**HTTP**: `https://api.relayer.com/sra/v0/`, `https://api.relayer.com/sra/v2/`
 
-**Websocket**: `wss://api.relayer.com/sra/v0/`, `wss://api.relayer.com/sra/v1/`
+**Websocket**: `wss://api.relayer.com/sra/v0/`, `wss://api.relayer.com/sra/v2/`
 
 ### Testing
 
@@ -77,4 +80,4 @@ For more information see [the Asset Proxy](https://github.com/0xProject/0x-proto
 
 ### The `remainingFillableTakerAmount` Field
 
-In v1 of the standard relayer API we added the `remainingFillableTakerAmount` field. It is a convenience field that communicates how much of a 0x order is potentially left to be filled, and is present whenever a 0x order is returned by the API. Unlike the other fields in a 0x order, it is not guaranteed to be correct as it is derived from whatever mechanism the implementer (ie. the relayer) is using. While convenient for prototyping and low stakes situations, we recommend validating the value of the field by checking the state of the blockchain yourself, such as by using [Order Watcher](https://0xproject.com/wiki#0x-OrderWatcher).
+In v2 of the standard relayer API we added the `remainingFillableTakerAmount` field. It is a convenience field that communicates how much of a 0x order is potentially left to be filled, and is present whenever a 0x order is returned by the API. Unlike the other fields in a 0x order, it is not guaranteed to be correct as it is derived from whatever mechanism the implementer (ie. the relayer) is using. While convenient for prototyping and low stakes situations, we recommend validating the value of the field by checking the state of the blockchain yourself, such as by using [Order Watcher](https://0xproject.com/wiki#0x-OrderWatcher).
