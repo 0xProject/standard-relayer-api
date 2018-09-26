@@ -16,7 +16,7 @@ Skipped for naming convention and convenience reasons.
 Made to match [0x Protocol v2](https://github.com/0xProject/0x-protocol-specification/blob/master/v2/v2-specification.md)
 * [HTTP](https://github.com/0xProject/standard-relayer-api/blob/master/http/v2.md)
 * [WebSocket](https://github.com/0xProject/standard-relayer-api/blob/master/ws/v2.md)
-* OpenAPI Spec ([Docs](http://sra-api.s3-website-us-east-1.amazonaws.com/), [Package](https://github.com/0xProject/0x-monorepo/tree/development/packages/sra-spec))
+* OpenAPI Spec ([Docs](http://sra-spec.s3-website-us-east-1.amazonaws.com/), [Package](https://github.com/0xProject/0x-monorepo/tree/development/packages/sra-spec))
 
 ## General Info
 
