@@ -6,10 +6,11 @@
 
 ### SRA v3
 
-Made to match [0x Protocol v3](https://github.com/0xProject/0x-protocol-specification/blob/master/v3/v3-specification.md)
+Made to match [0x Protocol v3](https://github.com/0xProject/0x-protocol-specification/blob/master/v3/v3-specification.md). See [changes](https://github.com/0xProject/standard-relayer-api/releases/tag/v3.0.0) from v2.
 
 - [HTTP](https://github.com/0xProject/standard-relayer-api/blob/master/http/v3.md)
 - [WebSocket](https://github.com/0xProject/standard-relayer-api/blob/master/ws/v3.md)
+- OpenAPI Spec ([Docs](http://sra3-spec.s3-website-us-east-1.amazonaws.com/), [Package](https://github.com/0xProject/0x-monorepo/tree/development/packages/sra-spec))
 
 ### SRA v2
 
