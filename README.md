@@ -4,16 +4,12 @@
 
 ## Specification Versions
 
-### SRA v0
+### SRA v3
 
-Made to match [0x Protocol v1](https://github.com/0xProject/0x-protocol-specification/blob/master/v1/v1-whitepaper.pdf)
+Made to match [0x Protocol v3](https://github.com/0xProject/0x-protocol-specification/blob/master/v3/v3-specification.md)
 
-- [HTTP](https://github.com/0xProject/standard-relayer-api/blob/master/http/v0.md)
-- [WebSocket](https://github.com/0xProject/standard-relayer-api/blob/master/ws/v0.md)
-
-### SRA v1
-
-Skipped for naming convention and convenience reasons.
+- [HTTP](https://github.com/0xProject/standard-relayer-api/blob/master/http/v3.md)
+- [WebSocket](https://github.com/0xProject/standard-relayer-api/blob/master/ws/v3.md)
 
 ### SRA v2
 
@@ -22,6 +18,17 @@ Made to match [0x Protocol v2](https://github.com/0xProject/0x-protocol-specific
 - [HTTP](https://github.com/0xProject/standard-relayer-api/blob/master/http/v2.md)
 - [WebSocket](https://github.com/0xProject/standard-relayer-api/blob/master/ws/v2.md)
 - OpenAPI Spec ([Docs](http://sra-spec.s3-website-us-east-1.amazonaws.com/), [Package](https://github.com/0xProject/0x-monorepo/tree/development/packages/sra-spec))
+
+### SRA v1
+
+Skipped for naming convention and convenience reasons.
+
+### SRA v0
+
+Made to match [0x Protocol v1](https://github.com/0xProject/0x-protocol-specification/blob/master/v1/v1-whitepaper.pdf)
+
+- [HTTP](https://github.com/0xProject/standard-relayer-api/blob/master/http/v0.md)
+- [WebSocket](https://github.com/0xProject/standard-relayer-api/blob/master/ws/v0.md)
 
 ## General Info
 
