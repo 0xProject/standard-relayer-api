@@ -39,7 +39,7 @@ The URL that specifies the SRA API endpoint should end in the version. Here are 
 
 **HTTP**: `https://api.relayer.com/sra/v0/`, `https://api.relayer.com/sra/v2/`
 
-**Websocket**: `wss://api.relayer.com/sra/v0/`, `wss://api.relayer.com/sra/v2/`
+**Websocket**: `wss://ws.radarrelay.com/0x/v0`, `wss://ws.radarrelay.com/0x/v2`
 
 ### Schemas
 
